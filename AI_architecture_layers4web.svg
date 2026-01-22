@@ -1,0 +1,175 @@
+<svg width="800" height="1450" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Inter', -apple-system, Arial, sans-serif">
+  <defs>
+    <!-- Gradients for each layer -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1565c0"/>
+      <stop offset="100%" stop-color="#1976d2"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0277bd"/>
+      <stop offset="100%" stop-color="#0288d1"/>
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00695c"/>
+      <stop offset="100%" stop-color="#00897b"/>
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef6c00"/>
+      <stop offset="100%" stop-color="#f57c00"/>
+    </linearGradient>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6a1b9a"/>
+      <stop offset="100%" stop-color="#8e24aa"/>
+    </linearGradient>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c62828"/>
+      <stop offset="100%" stop-color="#d32f2f"/>
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Hover effects -->
+    <style type="text/css">
+      <![CDATA[
+        .layer-rect { transition: all 0.3s ease; cursor: pointer; }
+        .layer-rect:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .layer-title { font-weight: 600; font-size: 18px; fill: white; }
+        .layer-desc { font-size: 13px; fill: rgba(255,255,255,0.9); line-height: 1.4; }
+        .layer-number { font-weight: 700; font-size: 20px; fill: rgba(255,255,255,0.9); }
+        .layer-icon { opacity: 0.8; }
+      ]]>
+    </style>
+  </defs>
+
+  <!-- Subtle background gradient -->
+  <rect width="100%" height="100%" fill="url(#grad-bg)"/>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+
+  <!-- Header with decorative element -->
+  <rect x="0" y="0" width="800" height="80" fill="#1a237e"/>
+  <rect x="0" y="75" width="800" height="5" fill="#3949ab"/>
+  
+  <!-- Main Title -->
+  <text x="400" y="45" text-anchor="middle" font-size="28" font-weight="700" fill="white" letter-spacing="0.5">Seven Layers of AI Model Architecture</text>
+  <text x="400" y="70" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.8)">From Hardware Foundations to User Applications</text>
+
+  <!-- Decorative top border -->
+  <line x1="150" y1="95" x2="650" y2="95" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Layer 1: Physical Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="120" width="700" height="160" rx="12" fill="url(#grad1)" filter="url(#shadow)"/>
+    <rect x="65" y="135" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="160" class="layer-number" text-anchor="middle">1</text>
+    <text x="120" y="150" class="layer-title">Physical Layer</text>
+    <text x="120" y="180" class="layer-desc">Hardware foundation: GPUs, TPUs, cloud/on-prem servers,</text>
+    <text x="120" y="200" class="layer-desc">edge computing for low-latency AI (e.g., autonomous vehicles).</text>
+    <!-- Icon -->
+    <path d="M 680,160 L 710,160 L 710,190 L 680,190 Z M 690,165 L 700,165 L 700,175 L 690,175 Z M 690,180 L 700,180 L 700,185 L 690,185 Z" 
+          fill="rgba(255,255,255,0.3)" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 2: Data Link Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="300" width="700" height="160" rx="12" fill="url(#grad2)" filter="url(#shadow)"/>
+    <rect x="65" y="315" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="340" class="layer-number" text-anchor="middle">2</text>
+    <text x="120" y="330" class="layer-title">Data Link Layer</text>
+    <text x="120" y="360" class="layer-desc">Model serving, APIs, MLOps, and LangChain orchestration;</text>
+    <text x="120" y="380" class="layer-desc">connects AI to business systems (e.g., chatbots, recommendation engines).</text>
+    <!-- Icon -->
+    <path d="M 680,340 L 690,330 L 700,340 L 690,350 Z M 685,335 L 695,335 L 695,345 L 685,345 Z" 
+          fill="rgba(255,255,255,0.3)" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 3: Computation Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="480" width="700" height="160" rx="12" fill="url(#grad3)" filter="url(#shadow)"/>
+    <rect x="65" y="495" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="520" class="layer-number" text-anchor="middle">3</text>
+    <text x="120" y="510" class="layer-title">Computation Layer</text>
+    <text x="120" y="540" class="layer-desc">Real-time processing via GPUs/TPUs, distributed computing,</text>
+    <text x="120" y="560" class="layer-desc">and frameworks like TensorFlow, PyTorch, JAX.</text>
+    <!-- Icon -->
+    <circle cx="690" cy="520" r="15" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" class="layer-icon"/>
+    <path d="M 690,510 L 690,530 M 680,520 L 700,520" stroke="rgba(255,255,255,0.3)" stroke-width="2" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 4: Knowledge Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="660" width="700" height="160" rx="12" fill="url(#grad4)" filter="url(#shadow)"/>
+    <rect x="65" y="675" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="700" class="layer-number" text-anchor="middle">4</text>
+    <text x="120" y="690" class="layer-title">Knowledge Layer</text>
+    <text x="120" y="720" class="layer-desc">Enhances decisions using RAG, knowledge graphs,</text>
+    <text x="120" y="740" class="layer-desc">and vector search (e.g., GitHub Copilot, search engines).</text>
+    <!-- Icon -->
+    <path d="M 680,700 L 700,700 L 700,720 L 680,720 Z M 685,705 L 695,705 L 695,715 L 685,715 Z" 
+          fill="rgba(255,255,255,0.3)" class="layer-icon"/>
+    <circle cx="690" cy="700" r="3" fill="rgba(255,255,255,0.5)" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 5: Learning Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="840" width="700" height="160" rx="12" fill="url(#grad5)" filter="url(#shadow)"/>
+    <rect x="65" y="855" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="880" class="layer-number" text-anchor="middle">5</text>
+    <text x="120" y="870" class="layer-title">Learning Layer</text>
+    <text x="120" y="900" class="layer-desc">Model training & optimization: CNNs, RNNs, Transformers,</text>
+    <text x="120" y="920" class="layer-desc">backpropagation, gradient descent, continual learning.</text>
+    <!-- Icon -->
+    <path d="M 680,880 L 700,860 L 700,900 L 680,880 Z" 
+          fill="rgba(255,255,255,0.3)" class="layer-icon"/>
+    <line x1="685" y1="870" x2="695" y2="865" stroke="rgba(255,255,255,0.5)" stroke-width="2" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 6: Representation Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="1020" width="700" height="160" rx="12" fill="url(#grad6)" filter="url(#shadow)"/>
+    <rect x="65" y="1035" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="1060" class="layer-number" text-anchor="middle">6</text>
+    <text x="120" y="1050" class="layer-title">Representation Layer</text>
+    <text x="120" y="1080" class="layer-desc">Transforms raw data: tokenization, embeddings (BERT, Word2Vec),</text>
+    <text x="120" y="1100" class="layer-desc">feature engineering for NLP and computer vision.</text>
+    <!-- Icon -->
+    <path d="M 680,1080 Q 690,1070 700,1080 Q 690,1090 680,1080 Z" 
+          fill="rgba(255,255,255,0.3)" class="layer-icon"/>
+    <circle cx="690" cy="1080" r="5" fill="rgba(255,255,255,0.5)" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 7: Application Layer -->
+  <g class="layer-group" transform="translate(0,0)">
+    <rect class="layer-rect" x="50" y="1200" width="700" height="160" rx="12" fill="url(#grad7)" filter="url(#shadow)"/>
+    <rect x="65" y="1215" width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <text x="85" y="1240" class="layer-number" text-anchor="middle">7</text>
+    <text x="120" y="1230" class="layer-title">Application Layer</text>
+    <text x="120" y="1260" class="layer-desc">User-facing interfaces: ChatGPT, Bard, automation tools,</text>
+    <text x="120" y="1280" class="layer-desc">designed for intuitive interaction and workflow integration.</text>
+    <!-- Icon -->
+    <circle cx="690" cy="1240" r="12" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" class="layer-icon"/>
+    <path d="M 685,1235 L 695,1245 M 695,1235 L 685,1245" stroke="rgba(255,255,255,0.3)" stroke-width="2" class="layer-icon"/>
+  </g>
+
+  <!-- Connecting lines between layers -->
+  <path d="M 400,280 L 400,295 M 400,440 L 400,455 M 400,620 L 400,635 M 400,800 L 400,815 M 400,980 L 400,995 M 400,1160 L 400,1175" 
+        stroke="#cbd5e1" stroke-width="2" stroke-dasharray="3,3"/>
+  
+  <!-- Arrowheads -->
+  <path d="M 395,295 L 400,305 L 405,295 Z" fill="#cbd5e1"/>
+  <path d="M 395,455 L 400,465 L 405,455 Z" fill="#cbd5e1"/>
+  <path d="M 395,635 L 400,645 L 405,635 Z" fill="#cbd5e1"/>
+  <path d="M 395,815 L 400,825 L 405,815 Z" fill="#cbd5e1"/>
+  <path d="M 395,995 L 400,1005 L 405,995 Z" fill="#cbd5e1"/>
+  <path d="M 395,1175 L 400,1185 L 405,1175 Z" fill="#cbd5e1"/>
+
+  <!-- Footer note -->
+  <text x="400" y="1420" text-anchor="middle" font-size="12" fill="#64748b">AI Architecture Stack | Hover over layers for interaction</text>
+
+</svg>
