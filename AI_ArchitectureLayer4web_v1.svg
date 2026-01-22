@@ -1,0 +1,469 @@
+<svg width="850" height="1550" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <!-- Complex gradients for each layer -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="50%" stop-color="#1b263b"/>
+      <stop offset="100%" stop-color="#2c3e50"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="50%" stop-color="#283593"/>
+      <stop offset="100%" stop-color="#3949ab"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01579b"/>
+      <stop offset="50%" stop-color="#0277bd"/>
+      <stop offset="100%" stop-color="#0288d1"/>
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004d40"/>
+      <stop offset="50%" stop-color="#00695c"/>
+      <stop offset="100%" stop-color="#00796b"/>
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf360c"/>
+      <stop offset="50%" stop-color="#d84315"/>
+      <stop offset="100%" stop-color="#ff5722"/>
+    </linearGradient>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a148c"/>
+      <stop offset="50%" stop-color="#6a1b9a"/>
+      <stop offset="100%" stop-color="#8e24aa"/>
+    </linearGradient>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b71c1c"/>
+      <stop offset="50%" stop-color="#c62828"/>
+      <stop offset="100%" stop-color="#d32f2f"/>
+    </linearGradient>
+    
+    <!-- Animated gradient for background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a">
+        <animate attributeName="stop-color" values="#0f172a;#1e293b;#0f172a" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1e293b">
+        <animate attributeName="stop-color" values="#1e293b;#334155;#1e293b" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="white" flood-opacity="0.5" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 3D shadow effect -->
+    <filter id="shadow3d" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Highlight effect -->
+    <filter id="highlight">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20" lighting-color="white" result="spec">
+        <fePointLight x="-50" y="-50" z="200"/>
+      </feSpecularLighting>
+      <feComposite in="spec" in2="SourceAlpha" operator="in" result="spec"/>
+      <feComposite in="SourceGraphic" in2="spec" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+    
+    <!-- Icons as symbols -->
+    <symbol id="icon-server" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2" fill="white" opacity="0.8"/>
+      <rect x="5" y="7" width="14" height="3" rx="1" fill="white" opacity="0.6"/>
+      <rect x="5" y="12" width="14" height="3" rx="1" fill="white" opacity="0.6"/>
+      <circle cx="8" cy="9" r="1" fill="white"/>
+      <circle cx="8" cy="14" r="1" fill="white"/>
+    </symbol>
+    
+    <symbol id="icon-api" viewBox="0 0 24 24">
+      <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" opacity="0.8"/>
+      <path d="M2 17L12 22L22 17" stroke="white" opacity="0.6" stroke-width="2" fill="none"/>
+      <path d="M2 12L12 17L22 12" stroke="white" opacity="0.6" stroke-width="2" fill="none"/>
+    </symbol>
+    
+    <symbol id="icon-chip" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+      <rect x="8" y="8" width="8" height="8" fill="white" opacity="0.6"/>
+      <path d="M12 4V8M12 16V20M4 12H8M16 12H20" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    </symbol>
+    
+    <symbol id="icon-brain" viewBox="0 0 24 24">
+      <path d="M12 3C8 3 4 7 4 12C4 16 8 20 12 20C16 20 20 16 20 12C20 7 16 3 12 3Z" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+      <path d="M8 10C8 12 10 14 12 14C14 14 16 12 16 10" stroke="white" stroke-width="1.5" opacity="0.6" fill="none"/>
+      <circle cx="10" cy="9" r="1" fill="white" opacity="0.7"/>
+      <circle cx="14" cy="9" r="1" fill="white" opacity="0.7"/>
+    </symbol>
+    
+    <symbol id="icon-ai" viewBox="0 0 24 24">
+      <path d="M12 2L15 9H21L16 14L18 21L12 17L6 21L8 14L3 9H9L12 2Z" fill="white" opacity="0.8"/>
+    </symbol>
+    
+    <symbol id="icon-data" viewBox="0 0 24 24">
+      <path d="M3 3V21H21" stroke="white" stroke-width="2" opacity="0.8" fill="none"/>
+      <path d="M7 13L10 10L13 13L16 8L19 11" stroke="white" stroke-width="1.5" opacity="0.6" fill="none"/>
+      <circle cx="7" cy="16" r="1.5" fill="white" opacity="0.7"/>
+      <circle cx="13" cy="8" r="1.5" fill="white" opacity="0.7"/>
+    </symbol>
+    
+    <symbol id="icon-app" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="3" fill="white" opacity="0.8"/>
+      <rect x="8" y="8" width="8" height="3" rx="1" fill="white" opacity="0.6"/>
+      <circle cx="9" cy="14" r="1.5" fill="white" opacity="0.6"/>
+      <circle cx="12" cy="14" r="1.5" fill="white" opacity="0.6"/>
+      <circle cx="15" cy="14" r="1.5" fill="white" opacity="0.6"/>
+    </symbol>
+    
+    <!-- Tech pattern for background -->
+    <pattern id="techPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0 0L100 100M100 0L0 100" stroke="#1e293b" stroke-width="0.5" opacity="0.1"/>
+      <circle cx="50" cy="50" r="20" fill="none" stroke="#1e293b" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+    
+    <!-- CSS styles with advanced animations -->
+    <style type="text/css">
+      <![CDATA[
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+        
+        @keyframes glowPulse {
+          0%, 100% { filter: brightness(1); }
+          50% { filter: brightness(1.1); }
+        }
+        
+        .layer-group { cursor: pointer; }
+        .layer-rect { 
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+          animation: float 6s ease-in-out infinite;
+          animation-delay: var(--delay, 0s);
+        }
+        .layer-rect:hover { 
+          transform: translateY(-8px) scale(1.02); 
+          filter: url(#glow) brightness(1.15);
+        }
+        .layer-title { 
+          font-weight: 700; 
+          font-size: 20px; 
+          fill: white; 
+          text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+        }
+        .layer-desc { 
+          font-size: 14px; 
+          fill: rgba(255,255,255,0.9); 
+          line-height: 1.5;
+        }
+        .layer-number { 
+          font-weight: 800; 
+          font-size: 24px; 
+          fill: rgba(255,255,255,0.95);
+          text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .layer-icon { 
+          opacity: 0.9; 
+          transition: all 0.3s ease;
+          animation: pulse 3s ease-in-out infinite;
+        }
+        .layer-group:hover .layer-icon {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+        .tech-badge {
+          fill: rgba(255,255,255,0.1);
+          stroke: rgba(255,255,255,0.2);
+          stroke-width: 1;
+          rx: 4;
+        }
+        .tech-text {
+          font-size: 10px;
+          fill: white;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+        }
+        .connector-line {
+          stroke: #64748b;
+          stroke-width: 2;
+          stroke-dasharray: 5,3;
+          opacity: 0.6;
+        }
+        .connector-dot {
+          fill: #94a3b8;
+          animation: glowPulse 2s ease-in-out infinite;
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <!-- Animated background with tech pattern -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  <rect width="100%" height="100%" fill="url(#techPattern)" opacity="0.05"/>
+
+  <!-- Decorative background elements -->
+  <circle cx="100" cy="100" r="50" fill="#1e293b" opacity="0.05"/>
+  <circle cx="750" cy="200" r="80" fill="#334155" opacity="0.05"/>
+  <circle cx="150" cy="500" r="60" fill="#475569" opacity="0.05"/>
+  <circle cx="700" cy="700" r="40" fill="#64748b" opacity="0.05"/>
+
+  <!-- Header with 3D effect -->
+  <rect x="0" y="0" width="850" height="100" fill="#0f172a"/>
+  <rect x="0" y="95" width="850" height="5" fill="url(#grad2)"/>
+  
+  <!-- Main Title with gradient -->
+  <text x="425" y="50" text-anchor="middle" font-size="32" font-weight="800" fill="url(#grad3)" letter-spacing="0.5">
+    Seven Layers of AI Architecture
+  </text>
+  <text x="425" y="80" text-anchor="middle" font-size="16" fill="#94a3b8" font-weight="500">
+    From Physical Infrastructure to Intelligent Applications
+  </text>
+
+  <!-- Layer 1: Physical Layer -->
+  <g class="layer-group" style="--delay: 0s">
+    <rect class="layer-rect" x="75" y="130" width="700" height="170" rx="15" fill="url(#grad1)" filter="url(#shadow3d)"/>
+    <!-- 3D top highlight -->
+    <rect x="75" y="130" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="155" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="185" class="layer-number" text-anchor="middle">1</text>
+    
+    <text x="160" y="165" class="layer-title">Physical Layer</text>
+    <text x="160" y="200" class="layer-desc">Hardware foundation: GPUs, TPUs, cloud/on-prem servers,</text>
+    <text x="160" y="225" class="layer-desc">edge computing for low-latency AI (e.g., autonomous vehicles).</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="240" width="80" height="22"/>
+    <text x="200" y="255" class="tech-text" text-anchor="middle">GPU/TPU</text>
+    
+    <rect class="tech-badge" x="250" y="240" width="100" height="22"/>
+    <text x="300" y="255" class="tech-text" text-anchor="middle">Cloud Compute</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-server" x="730" y="160" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 2: Data Link Layer -->
+  <g class="layer-group" style="--delay: 0.5s">
+    <rect class="layer-rect" x="75" y="320" width="700" height="170" rx="15" fill="url(#grad2)" filter="url(#shadow3d)"/>
+    <rect x="75" y="320" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="345" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="375" class="layer-number" text-anchor="middle">2</text>
+    
+    <text x="160" y="355" class="layer-title">Data Link Layer</text>
+    <text x="160" y="390" class="layer-desc">Model serving, APIs, MLOps, and LangChain orchestration;</text>
+    <text x="160" y="415" class="layer-desc">connects AI to business systems (e.g., chatbots, recommendation engines).</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="430" width="60" height="22"/>
+    <text x="190" y="445" class="tech-text" text-anchor="middle">APIs</text>
+    
+    <rect class="tech-badge" x="230" y="430" width="80" height="22"/>
+    <text x="270" y="445" class="tech-text" text-anchor="middle">MLOps</text>
+    
+    <rect class="tech-badge" x="320" y="430" width="100" height="22"/>
+    <text x="370" y="445" class="tech-text" text-anchor="middle">LangChain</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-api" x="730" y="350" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 3: Computation Layer -->
+  <g class="layer-group" style="--delay: 1s">
+    <rect class="layer-rect" x="75" y="510" width="700" height="170" rx="15" fill="url(#grad3)" filter="url(#shadow3d)"/>
+    <rect x="75" y="510" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="535" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="565" class="layer-number" text-anchor="middle">3</text>
+    
+    <text x="160" y="545" class="layer-title">Computation Layer</text>
+    <text x="160" y="580" class="layer-desc">Real-time processing via GPUs/TPUs, distributed computing,</text>
+    <text x="160" y="605" class="layer-desc">and frameworks like TensorFlow, PyTorch, JAX.</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="620" width="90" height="22"/>
+    <text x="205" y="635" class="tech-text" text-anchor="middle">TensorFlow</text>
+    
+    <rect class="tech-badge" x="260" y="620" width="80" height="22"/>
+    <text x="300" y="635" class="tech-text" text-anchor="middle">PyTorch</text>
+    
+    <rect class="tech-badge" x="350" y="620" width="50" height="22"/>
+    <text x="375" y="635" class="tech-text" text-anchor="middle">JAX</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-chip" x="730" y="540" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 4: Knowledge Layer -->
+  <g class="layer-group" style="--delay: 1.5s">
+    <rect class="layer-rect" x="75" y="700" width="700" height="170" rx="15" fill="url(#grad4)" filter="url(#shadow3d)"/>
+    <rect x="75" y="700" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="725" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="755" class="layer-number" text-anchor="middle">4</text>
+    
+    <text x="160" y="735" class="layer-title">Knowledge Layer</text>
+    <text x="160" y="770" class="layer-desc">Enhances decisions using RAG, knowledge graphs,</text>
+    <text x="160" y="795" class="layer-desc">and vector search (e.g., GitHub Copilot, search engines).</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="810" width="60" height="22"/>
+    <text x="190" y="825" class="tech-text" text-anchor="middle">RAG</text>
+    
+    <rect class="tech-badge" x="230" y="810" width="120" height="22"/>
+    <text x="290" y="825" class="tech-text" text-anchor="middle">Vector DB</text>
+    
+    <rect class="tech-badge" x="360" y="810" width="110" height="22"/>
+    <text x="415" y="825" class="tech-text" text-anchor="middle">Semantic Search</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-brain" x="730" y="730" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 5: Learning Layer -->
+  <g class="layer-group" style="--delay: 2s">
+    <rect class="layer-rect" x="75" y="890" width="700" height="170" rx="15" fill="url(#grad5)" filter="url(#shadow3d)"/>
+    <rect x="75" y="890" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="915" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="945" class="layer-number" text-anchor="middle">5</text>
+    
+    <text x="160" y="925" class="layer-title">Learning Layer</text>
+    <text x="160" y="960" class="layer-desc">Model training & optimization: CNNs, RNNs, Transformers,</text>
+    <text x="160" y="985" class="layer-desc">backpropagation, gradient descent, continual learning.</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="1000" width="60" height="22"/>
+    <text x="190" y="1015" class="tech-text" text-anchor="middle">LLMs</text>
+    
+    <rect class="tech-badge" x="230" y="1000" width="70" height="22"/>
+    <text x="265" y="1015" class="tech-text" text-anchor="middle">Transformers</text>
+    
+    <rect class="tech-badge" x="310" y="1000" width="90" height="22"/>
+    <text x="355" y="1015" class="tech-text" text-anchor="middle">Backprop</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-ai" x="730" y="920" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 6: Representation Layer -->
+  <g class="layer-group" style="--delay: 2.5s">
+    <rect class="layer-rect" x="75" y="1080" width="700" height="170" rx="15" fill="url(#grad6)" filter="url(#shadow3d)"/>
+    <rect x="75" y="1080" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="1105" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="1135" class="layer-number" text-anchor="middle">6</text>
+    
+    <text x="160" y="1115" class="layer-title">Representation Layer</text>
+    <text x="160" y="1150" class="layer-desc">Transforms raw data: tokenization, embeddings (BERT, Word2Vec),</text>
+    <text x="160" y="1175" class="layer-desc">feature engineering for NLP and computer vision.</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="1190" width="70" height="22"/>
+    <text x="195" y="1205" class="tech-text" text-anchor="middle">BERT</text>
+    
+    <rect class="tech-badge" x="240" y="1190" width="85" height="22"/>
+    <text x="282.5" y="1205" class="tech-text" text-anchor="middle">Embeddings</text>
+    
+    <rect class="tech-badge" x="335" y="1190" width="80" height="22"/>
+    <text x="375" y="1205" class="tech-text" text-anchor="middle">Tokenization</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-data" x="730" y="1110" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 7: Application Layer -->
+  <g class="layer-group" style="--delay: 3s">
+    <rect class="layer-rect" x="75" y="1270" width="700" height="170" rx="15" fill="url(#grad7)" filter="url(#shadow3d)"/>
+    <rect x="75" y="1270" width="700" height="15" rx="15" fill="rgba(255,255,255,0.1)"/>
+    
+    <rect x="95" y="1295" width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="120" y="1325" class="layer-number" text-anchor="middle">7</text>
+    
+    <text x="160" y="1305" class="layer-title">Application Layer</text>
+    <text x="160" y="1340" class="layer-desc">User-facing interfaces: ChatGPT, Bard, automation tools,</text>
+    <text x="160" y="1365" class="layer-desc">designed for intuitive interaction and workflow integration.</text>
+    
+    <!-- Tech badges -->
+    <rect class="tech-badge" x="160" y="1380" width="80" height="22"/>
+    <text x="200" y="1395" class="tech-text" text-anchor="middle">ChatGPT</text>
+    
+    <rect class="tech-badge" x="250" y="1380" width="60" height="22"/>
+    <text x="280" y="1395" class="tech-text" text-anchor="middle">Bard</text>
+    
+    <rect class="tech-badge" x="320" y="1380" width="90" height="22"/>
+    <text x="365" y="1395" class="tech-text" text-anchor="middle">AutoML</text>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-app" x="730" y="1300" width="40" height="40" class="layer-icon"/>
+  </g>
+
+  <!-- Advanced connectors with animated dots -->
+  <g id="connectors">
+    <line class="connector-line" x1="425" y1="300" x2="425" y2="315"/>
+    <line class="connector-line" x1="425" y1="490" x2="425" y2="505"/>
+    <line class="connector-line" x1="425" y1="680" x2="425" y2="695"/>
+    <line class="connector-line" x1="425" y1="870" x2="425" y2="885"/>
+    <line class="connector-line" x1="425" y1="1060" x2="425" y2="1075"/>
+    <line class="connector-line" x1="425" y1="1250" x2="425" y2="1265"/>
+    
+    <!-- Animated dots -->
+    <circle class="connector-dot" cx="425" cy="310" r="3"/>
+    <circle class="connector-dot" cx="425" cy="500" r="3"/>
+    <circle class="connector-dot" cx="425" cy="690" r="3"/>
+    <circle class="connector-dot" cx="425" cy="880" r="3"/>
+    <circle class="connector-dot" cx="425" cy="1070" r="3"/>
+    <circle class="connector-dot" cx="425" cy="1260" r="3"/>
+    
+    <!-- Arrowheads -->
+    <path d="M420 315 L425 325 L430 315 Z" fill="#94a3b8"/>
+    <path d="M420 505 L425 515 L430 505 Z" fill="#94a3b8"/>
+    <path d="M420 695 L425 705 L430 695 Z" fill="#94a3b8"/>
+    <path d="M420 885 L425 895 L430 885 Z" fill="#94a3b8"/>
+    <path d="M420 1075 L425 1085 L430 1075 Z" fill="#94a3b8"/>
+    <path d="M420 1265 L425 1275 L430 1265 Z" fill="#94a3b8"/>
+  </g>
+
+  <!-- Data flow animation lines -->
+  <path d="M425 140 Q450 120 475 140" stroke="rgba(59, 130, 246, 0.3)" stroke-width="2" fill="none" stroke-dasharray="5,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+  </path>
+  <path d="M425 1440 Q450 1420 475 1440" stroke="rgba(59, 130, 246, 0.3)" stroke-width="2" fill="none" stroke-dasharray="5,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Legend/Key -->
+  <rect x="75" y="1480" width="700" height="50" rx="8" fill="rgba(30, 41, 59, 0.8)" stroke="#475569" stroke-width="1"/>
+  <circle cx="100" cy="1505" r="4" fill="#3b82f6"/>
+  <text x="115" y="1510" font-size="12" fill="#cbd5e8">Clickable Layers</text>
+  
+  <circle cx="250" cy="1505" r="4" fill="#10b981"/>
+  <text x="265" y="1510" font-size="12" fill="#cbd5e8">Animated Elements</text>
+  
+  <circle cx="400" cy="1505" r="4" fill="#8b5cf6"/>
+  <text x="415" y="1510" font-size="12" fill="#cbd5e8">Real-time Tech Stack</text>
+  
+  <circle cx="580" cy="1505" r="4" fill="#f59e0b"/>
+  <text x="595" y="1510" font-size="12" fill="#cbd5e8">Hover for Details</text>
+
+  <!-- Interactive tooltip area (invisible but captures hover) -->
+  <rect x="75" y="130" width="700" height="1300" fill="transparent" opacity="0"/>
+
+  <!-- Footer with gradient -->
+  <rect x="0" y="1545" width="850" height="5" fill="url(#grad7)"/>
+  <text x="425" y="1565" text-anchor="middle" font-size="11" fill="#94a3b8" font-weight="500">
+    AI Architecture Stack • Hover over layers for interactive details • Each layer represents a critical component in modern AI systems
+  </text>
+</svg>
