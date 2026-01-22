@@ -1,0 +1,478 @@
+<svg width="900" height="1600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <!-- ColorBrewer Sequential Multi-Hue Color Scheme -->
+    <linearGradient id="layer1-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f3b08"/>
+      <stop offset="50%" stop-color="#b35806"/>
+      <stop offset="100%" stop-color="#e08214"/>
+    </linearGradient>
+    
+    <linearGradient id="layer2-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#542788"/>
+      <stop offset="50%" stop-color="#8073ac"/>
+      <stop offset="100%" stop-color="#b2abd2"/>
+    </linearGradient>
+    
+    <linearGradient id="layer3-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b7837"/>
+      <stop offset="50%" stop-color="#5aae61"/>
+      <stop offset="100%" stop-color="#a6dba0"/>
+    </linearGradient>
+    
+    <linearGradient id="layer4-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2166ac"/>
+      <stop offset="50%" stop-color="#4393c3"/>
+      <stop offset="100%" stop-color="#92c5de"/>
+    </linearGradient>
+    
+    <linearGradient id="layer5-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b2182b"/>
+      <stop offset="50%" stop-color="#d6604d"/>
+      <stop offset="100%" stop-color="#f4a582"/>
+    </linearGradient>
+    
+    <linearGradient id="layer6-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5e3c99"/>
+      <stop offset="50%" stop-color="#b2abd2"/>
+      <stop offset="100%" stop-color="#e7d4e8"/>
+    </linearGradient>
+    
+    <linearGradient id="layer7-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#006837"/>
+      <stop offset="50%" stop-color="#31a354"/>
+      <stop offset="100%" stop-color="#78c679"/>
+    </linearGradient>
+    
+    <!-- Pattern fills for extra texture -->
+    <pattern id="pattern-diagonal" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,0 L10,10" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+      <path d="M0,10 L10,0" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    </pattern>
+    
+    <pattern id="pattern-dots" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="rgba(255,255,255,0.3)"/>
+    </pattern>
+    
+    <pattern id="pattern-crosshatch" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="8" y2="8" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="0" x2="0" y2="8" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    </pattern>
+    
+    <!-- Bold drop shadows for better contrast -->
+    <filter id="bold-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.4)" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.6)" flood-opacity="1"/>
+    </filter>
+    
+    <!-- Text shadow filter for better readability -->
+    <filter id="text-shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="black" flood-opacity="0.7"/>
+    </filter>
+    
+    <!-- Bold outline filter for text -->
+    <filter id="text-outline">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1"/>
+      <feFlood flood-color="white" flood-opacity="1"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Glowing effect -->
+    <filter id="glow-effect">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="white" flood-opacity="0.8"/>
+      <feComposite in2="blur" operator="in" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Bold icons with high contrast -->
+    <symbol id="icon-server-bold" viewBox="0 0 32 32">
+      <rect x="2" y="4" width="28" height="24" rx="4" fill="white" stroke="white" stroke-width="2"/>
+      <rect x="6" y="8" width="20" height="6" rx="2" fill="#333"/>
+      <rect x="6" y="18" width="20" height="6" rx="2" fill="#333"/>
+      <circle cx="10" cy="11" r="1.5" fill="white"/>
+      <circle cx="10" cy="21" r="1.5" fill="white"/>
+      <circle cx="16" cy="11" r="1.5" fill="white"/>
+      <circle cx="16" cy="21" r="1.5" fill="white"/>
+    </symbol>
+    
+    <symbol id="icon-api-bold" viewBox="0 0 32 32">
+      <path d="M16 2L2 10L16 18L30 10L16 2Z" fill="white" stroke="white" stroke-width="2"/>
+      <path d="M2 22L16 30L30 22" stroke="white" stroke-width="3" fill="none"/>
+      <path d="M2 16L16 24L30 16" stroke="white" stroke-width="3" fill="none"/>
+    </symbol>
+    
+    <!-- Background gradient -->
+    <linearGradient id="background-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#e9ecef"/>
+    </linearGradient>
+    
+    <style type="text/css">
+      <![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+        
+        .layer-title {
+          font-weight: 800;
+          font-size: 22px;
+          fill: white;
+          filter: url(#text-shadow);
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+        
+        .layer-desc {
+          font-weight: 600;
+          font-size: 14px;
+          fill: white;
+          filter: url(#text-outline);
+          line-height: 1.6;
+        }
+        
+        .layer-number {
+          font-weight: 900;
+          font-size: 28px;
+          fill: white;
+          text-anchor: middle;
+          dominant-baseline: middle;
+          filter: url(#text-shadow);
+        }
+        
+        .tech-badge {
+          fill: rgba(255, 255, 255, 0.2);
+          stroke: white;
+          stroke-width: 1.5;
+          rx: 6;
+        }
+        
+        .tech-text {
+          font-size: 11px;
+          font-weight: 700;
+          fill: white;
+          letter-spacing: 0.3px;
+          filter: url(#text-outline);
+        }
+        
+        .layer-icon {
+          filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.5));
+        }
+        
+        .connector-line {
+          stroke: #333;
+          stroke-width: 3;
+          opacity: 0.8;
+        }
+        
+        .connector-dot {
+          fill: white;
+          stroke: #333;
+          stroke-width: 2;
+        }
+        
+        .pattern-overlay {
+          mix-blend-mode: overlay;
+          opacity: 0.3;
+        }
+        
+        .section-header {
+          font-weight: 900;
+          font-size: 36px;
+          fill: #2d3748;
+          letter-spacing: 1px;
+        }
+        
+        .section-subtitle {
+          font-weight: 600;
+          font-size: 18px;
+          fill: #4a5568;
+        }
+        
+        .highlight-box {
+          fill: rgba(255, 255, 255, 0.15);
+          stroke: white;
+          stroke-width: 2;
+          rx: 8;
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <!-- Background with gradient -->
+  <rect width="100%" height="100%" fill="url(#background-gradient)"/>
+  
+  <!-- Decorative background elements -->
+  <circle cx="100" cy="100" r="60" fill="#e9d8fd" opacity="0.3"/>
+  <circle cx="800" cy="150" r="80" fill="#c6f6d5" opacity="0.3"/>
+  <circle cx="150" cy="500" r="70" fill="#fed7d7" opacity="0.3"/>
+  <circle cx="750" cy="700" r="50" fill="#bee3f8" opacity="0.3"/>
+
+  <!-- Header Section -->
+  <rect x="0" y="0" width="900" height="120" fill="#2d3748"/>
+  <rect x="0" y="115" width="900" height="5" fill="#e08214"/>
+  
+  <text x="450" y="60" text-anchor="middle" class="section-header" fill="white">AI MODEL ARCHITECTURE</text>
+  <text x="450" y="95" text-anchor="middle" font-size="18" font-weight="600" fill="#cbd5e0">
+    Seven-Layer Stack from Infrastructure to Intelligence
+  </text>
+
+  <!-- Layer 1: Physical Layer - Vibrant Brown/Orange -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="150" width="800" height="180" rx="12" fill="url(#layer1-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="150" width="800" height="180" rx="12" fill="url(#pattern-diagonal)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="170" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="200" class="layer-number">1</text>
+    
+    <!-- Content -->
+    <text x="150" y="190" class="layer-title">PHYSICAL LAYER</text>
+    <rect x="150" y="200" width="200" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="230" class="layer-desc">Hardware foundation: GPUs, TPUs, cloud/on-prem servers</text>
+    <text x="150" y="255" class="layer-desc">Edge computing for low-latency AI (e.g., autonomous vehicles)</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 270)">
+      <rect class="tech-badge" x="0" y="0" width="100" height="28"/>
+      <text x="50" y="18" class="tech-text" text-anchor="middle">GPU CLUSTERS</text>
+      
+      <rect class="tech-badge" x="110" y="0" width="120" height="28"/>
+      <text x="170" y="18" class="tech-text" text-anchor="middle">TPU ACCELERATORS</text>
+      
+      <rect class="tech-badge" x="240" y="0" width="100" height="28"/>
+      <text x="290" y="18" class="tech-text" text-anchor="middle">EDGE AI</text>
+    </g>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-server-bold" x="750" y="180" width="60" height="60" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 2: Data Link Layer - Vibrant Purple -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="350" width="800" height="180" rx="12" fill="url(#layer2-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="350" width="800" height="180" rx="12" fill="url(#pattern-dots)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="370" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="400" class="layer-number">2</text>
+    
+    <!-- Content -->
+    <text x="150" y="390" class="layer-title">DATA LINK LAYER</text>
+    <rect x="150" y="400" width="220" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="430" class="layer-desc">Model serving, APIs, MLOps, and LangChain orchestration</text>
+    <text x="150" y="455" class="layer-desc">Connects AI to business systems (e.g., chatbots, recommendation engines)</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 470)">
+      <rect class="tech-badge" x="0" y="0" width="90" height="28"/>
+      <text x="45" y="18" class="tech-text" text-anchor="middle">REST APIs</text>
+      
+      <rect class="tech-badge" x="100" y="0" width="100" height="28"/>
+      <text x="150" y="18" class="tech-text" text-anchor="middle">MLOPS</text>
+      
+      <rect class="tech-badge" x="210" y="0" width="120" height="28"/>
+      <text x="270" y="18" class="tech-text" text-anchor="middle">LANGCHAIN</text>
+    </g>
+    
+    <!-- Icon -->
+    <use xlink:href="#icon-api-bold" x="750" y="380" width="60" height="60" class="layer-icon"/>
+  </g>
+
+  <!-- Layer 3: Computation Layer - Vibrant Green -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="550" width="800" height="180" rx="12" fill="url(#layer3-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="550" width="800" height="180" rx="12" fill="url(#pattern-crosshatch)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="570" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="600" class="layer-number">3</text>
+    
+    <!-- Content -->
+    <text x="150" y="590" class="layer-title">COMPUTATION LAYER</text>
+    <rect x="150" y="600" width="250" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="630" class="layer-desc">Real-time processing via GPUs/TPUs, distributed computing</text>
+    <text x="150" y="655" class="layer-desc">Frameworks: TensorFlow, PyTorch, JAX, ONNX Runtime</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 670)">
+      <rect class="tech-badge" x="0" y="0" width="110" height="28"/>
+      <text x="55" y="18" class="tech-text" text-anchor="middle">TENSORFLOW</text>
+      
+      <rect class="tech-badge" x="120" y="0" width="90" height="28"/>
+      <text x="165" y="18" class="tech-text" text-anchor="middle">PYTORCH</text>
+      
+      <rect class="tech-badge" x="220" y="0" width="70" height="28"/>
+      <text x="255" y="18" class="tech-text" text-anchor="middle">JAX</text>
+    </g>
+  </g>
+
+  <!-- Layer 4: Knowledge Layer - Vibrant Blue -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="750" width="800" height="180" rx="12" fill="url(#layer4-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="750" width="800" height="180" rx="12" fill="url(#pattern-diagonal)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="770" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="800" class="layer-number">4</text>
+    
+    <!-- Content -->
+    <text x="150" y="790" class="layer-title">KNOWLEDGE LAYER</text>
+    <rect x="150" y="800" width="220" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="830" class="layer-desc">Enhances decisions using RAG, knowledge graphs, vector search</text>
+    <text x="150" y="855" class="layer-desc">Applications: GitHub Copilot, search engines, enterprise AI</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 870)">
+      <rect class="tech-badge" x="0" y="0" width="80" height="28"/>
+      <text x="40" y="18" class="tech-text" text-anchor="middle">RAG</text>
+      
+      <rect class="tech-badge" x="90" y="0" width="130" height="28"/>
+      <text x="155" y="18" class="tech-text" text-anchor="middle">KNOWLEDGE GRAPHS</text>
+      
+      <rect class="tech-badge" x="230" y="0" width="120" height="28"/>
+      <text x="290" y="18" class="tech-text" text-anchor="middle">VECTOR DB</text>
+    </g>
+  </g>
+
+  <!-- Layer 5: Learning Layer - Vibrant Red/Orange -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="950" width="800" height="180" rx="12" fill="url(#layer5-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="950" width="800" height="180" rx="12" fill="url(#pattern-dots)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="970" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="1000" class="layer-number">5</text>
+    
+    <!-- Content -->
+    <text x="150" y="990" class="layer-title">LEARNING LAYER</text>
+    <rect x="150" y="1000" width="200" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="1030" class="layer-desc">Model training & optimization: CNNs, RNNs, Transformers</text>
+    <text x="150" y="1055" class="layer-desc">Backpropagation, gradient descent, continual learning</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 1070)">
+      <rect class="tech-badge" x="0" y="0" width="100" height="28"/>
+      <text x="50" y="18" class="tech-text" text-anchor="middle">TRANSFORMERS</text>
+      
+      <rect class="tech-badge" x="110" y="0" width="80" height="28"/>
+      <text x="150" y="18" class="tech-text" text-anchor="middle">LLMs</text>
+      
+      <rect class="tech-badge" x="200" y="0" width="140" height="28"/>
+      <text x="270" y="18" class="tech-text" text-anchor="middle">BACKPROPAGATION</text>
+    </g>
+  </g>
+
+  <!-- Layer 6: Representation Layer - Vibrant Purple/Pink -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="1150" width="800" height="180" rx="12" fill="url(#layer6-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="1150" width="800" height="180" rx="12" fill="url(#pattern-crosshatch)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="1170" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="1200" class="layer-number">6</text>
+    
+    <!-- Content -->
+    <text x="150" y="1190" class="layer-title">REPRESENTATION LAYER</text>
+    <rect x="150" y="1200" width="280" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="1230" class="layer-desc">Transforms raw data: tokenization, embeddings (BERT, Word2Vec)</text>
+    <text x="150" y="1255" class="layer-desc">Feature engineering for NLP and computer vision applications</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 1270)">
+      <rect class="tech-badge" x="0" y="0" width="80" height="28"/>
+      <text x="40" y="18" class="tech-text" text-anchor="middle">BERT</text>
+      
+      <rect class="tech-badge" x="90" y="0" width="110" height="28"/>
+      <text x="145" y="18" class="tech-text" text-anchor="middle">EMBEDDINGS</text>
+      
+      <rect class="tech-badge" x="210" y="0" width="110" height="28"/>
+      <text x="265" y="18" class="tech-text" text-anchor="middle">TOKENIZATION</text>
+    </g>
+  </g>
+
+  <!-- Layer 7: Application Layer - Vibrant Green -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="1350" width="800" height="180" rx="12" fill="url(#layer7-gradient)" filter="url(#bold-shadow)"/>
+    <rect x="50" y="1350" width="800" height="180" rx="12" fill="url(#pattern-diagonal)" class="pattern-overlay"/>
+    
+    <!-- Number Badge -->
+    <rect x="70" y="1370" width="60" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+    <text x="100" y="1400" class="layer-number">7</text>
+    
+    <!-- Content -->
+    <text x="150" y="1390" class="layer-title">APPLICATION LAYER</text>
+    <rect x="150" y="1400" width="230" height="4" fill="white" opacity="0.8"/>
+    
+    <text x="150" y="1430" class="layer-desc">User-facing interfaces: ChatGPT, Bard, Claude, automation tools</text>
+    <text x="150" y="1455" class="layer-desc">Designed for intuitive interaction and workflow integration</text>
+    
+    <!-- Tech Tags -->
+    <g transform="translate(150, 1470)">
+      <rect class="tech-badge" x="0" y="0" width="100" height="28"/>
+      <text x="50" y="18" class="tech-text" text-anchor="middle">CHATGPT</text>
+      
+      <rect class="tech-badge" x="110" y="0" width="80" height="28"/>
+      <text x="150" y="18" class="tech-text" text-anchor="middle">CLAUDE</text>
+      
+      <rect class="tech-badge" x="200" y="0" width="100" height="28"/>
+      <text x="250" y="18" class="tech-text" text-anchor="middle">AUTOMATION</text>
+    </g>
+  </g>
+
+  <!-- Bold Connectors between layers -->
+  <g id="connectors">
+    <line class="connector-line" x1="450" y1="330" x2="450" y2="345"/>
+    <line class="connector-line" x1="450" y1="530" x2="450" y2="545"/>
+    <line class="connector-line" x1="450" y1="730" x2="450" y2="745"/>
+    <line class="connector-line" x1="450" y1="930" x2="450" y2="945"/>
+    <line class="connector-line" x1="450" y1="1130" x2="450" y2="1145"/>
+    <line class="connector-line" x1="450" y1="1330" x2="450" y2="1345"/>
+    
+    <!-- Connection Dots -->
+    <circle class="connector-dot" cx="450" cy="340" r="6"/>
+    <circle class="connector-dot" cx="450" cy="540" r="6"/>
+    <circle class="connector-dot" cx="450" cy="740" r="6"/>
+    <circle class="connector-dot" cx="450" cy="940" r="6"/>
+    <circle class="connector-dot" cx="450" cy="1140" r="6"/>
+    <circle class="connector-dot" cx="450" cy="1340" r="6"/>
+    
+    <!-- Arrowheads -->
+    <path d="M440 345 L450 360 L460 345 Z" fill="#333" stroke="#333" stroke-width="2"/>
+    <path d="M440 545 L450 560 L460 545 Z" fill="#333" stroke="#333" stroke-width="2"/>
+    <path d="M440 745 L450 760 L460 745 Z" fill="#333" stroke="#333" stroke-width="2"/>
+    <path d="M440 945 L450 960 L460 945 Z" fill="#333" stroke="#333" stroke-width="2"/>
+    <path d="M440 1145 L450 1160 L460 1145 Z" fill="#333" stroke="#333" stroke-width="2"/>
+    <path d="M440 1345 L450 1360 L460 1345 Z" fill="#333" stroke="#333" stroke-width="2"/>
+  </g>
+
+  <!-- Color Legend -->
+  <rect x="50" y="1560" width="800" height="30" rx="6" fill="#f8f9fa" stroke="#2d3748" stroke-width="2"/>
+  <text x="450" y="1580" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">
+    COLOR BREWER SCHEME: SEQUENTIAL MULTI-HUE | DIVERGING | QUALITATIVE
+  </text>
+
+  <!-- Footer -->
+  <rect x="0" y="1590" width="900" height="10" fill="linear-gradient(to right, #7f3b08, #542788, #1b7837, #2166ac, #b2182b, #5e3c99, #006837)"/>
+  
+  <text x="450" y="1615" text-anchor="middle" font-size="12" font-weight="600" fill="#4a5568">
+    AI Architecture Visualization • Seven Critical Layers • Each Color Represents a Distinct Functional Domain
+  </text>
+  
+  <!-- Data Flow Indicators -->
+  <text x="450" y="1640" text-anchor="middle" font-size="11" font-weight="600" fill="#718096">
+    ↓ DATA FLOW FROM INFRASTRUCTURE (LAYER 1) TO INTELLIGENCE (LAYER 7) ↑
+  </text>
+
+</svg>
